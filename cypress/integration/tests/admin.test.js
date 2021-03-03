@@ -4,6 +4,25 @@ import {ROUTE} from '../../../client/shared/enums/client.js';
 
 describe('Admin Tests', function()
 {
+  it('Prepare database for test', function()
+  {
+    doLogin();
+    
+    cy.window().then((win) => {
+      win.Meteor.call('clear.database');
+    })
+    
+    cy.wait(5000);
+    
+    cy.window().then((win) => {
+      win.Meteor.call('insert.dummy.data');
+    })
+    
+    cy.wait(5000);
+    
+    cy.url().should('contain', 'localhost');
+  });
+  
   it('Expire the license of a store', function()
   {
     doLogin();
