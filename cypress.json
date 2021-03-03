@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://localhost:3000/",
+  "watchForFileChanges": true,
+  "defaultCommandTimeout": 15000,
+  "requestTimeout": 15000,
+  "pageLoadTimeout": 60000,
+  "responseTimeout": 60000,
+  "projectId": "5um6ps"
+}
