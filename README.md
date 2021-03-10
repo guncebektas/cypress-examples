@@ -1,0 +1,1 @@
+# Some real-life examples for cypress on a meteor.js project
