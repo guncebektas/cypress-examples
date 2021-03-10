@@ -5,7 +5,7 @@ describe('Dashboard Tests', function()
 {
   // ----------------------------------------------------------------------
   
-  it('Dashboard test', function()
+  it('Component visibility', function()
   {
     doLogin();
     
@@ -13,6 +13,12 @@ describe('Dashboard Tests', function()
     
     cy.get('ul.navbar-nav').should('be.visible');
     
+    cy.get('[data-test="btn-order-id-0"]').should('be.visible');
+    
     cy.get('.btn-full-screen').should('be.visible');
+    
+    cy.get('#newPhoneCallForm').should('be.visible');
+    
+    cy.get('#qz-status').should('be.visible');
   });
 });

@@ -2,7 +2,6 @@ import {doLogin, insertOrder} from '../utilities/commons.js';
 
 describe('Order Store To Order Modal Tests', function()
 {
-  // ----------------------------------------------------------------------
   beforeEach(() =>
   {
     doLogin();
@@ -12,21 +11,26 @@ describe('Order Store To Order Modal Tests', function()
     cy.get('[data-test="store-to-order-modal-total"]').should('contain', 28);
   });
   
+  it('Count dashes', function()
+  {
+    cy.get('.dashes').find('.dash').should('have.length', 3);
+  });
+  
   it('Increase & decrease the amount of product in the order', function()
   {
     cy.get('#modal-product-to-order table tr:first-of-type td:first-of-type .btn-falcon-success').click();
-  
+    
     cy.get('#modal-product-to-order table tr:first-of-type td:last-of-type').should('contain', '2 x 3.00');
-  
+    
     cy.get('#modal-product-to-order table tr:first-of-type td:first-of-type .btn-falcon-danger').click();
-  
+    
     cy.get('#modal-product-to-order table tr:first-of-type td:last-of-type').should('contain', '1 x 3.00');
   });
   
   it('Remove one product from the order', function()
   {
     cy.get('#modal-product-to-order table tr:first-of-type td:first-of-type .btn-falcon-danger').click();
-  
+    
     cy.get('#modal-product-to-order table tr:first-of-type td:first-of-type').should('not.contain', 'Dondurma');
   });
   

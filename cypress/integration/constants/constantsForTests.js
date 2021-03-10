@@ -23,6 +23,6 @@ export const TEST = {
   CUSTOMER: {
     NAME: 'Günce',
     SURNAME: 'Bektaş',
-    PHONE: '05336115300'
+    PHONE: '05336115303'
   }
 };

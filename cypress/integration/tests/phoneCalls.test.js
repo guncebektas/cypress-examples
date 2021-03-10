@@ -9,7 +9,20 @@ describe('Phone Call Test', function()
     doLogin();
   });
   
-  it('Check last call view', function()
+  it('Check recent call', function()
+  {
+    cy.get('#newPhoneCallForm input[name="phone"]').clear().type(`${TEST.CUSTOMER.PHONE}12`);
+  
+    cy.get('#newPhoneCallForm button[type="submit"]').click();
+  
+    cy.visit(ROUTE.PHONE_CALL_LIST);
+    
+    cy.get('#DataTables_Table_1_filter input[type="search"]').clear().type(`${TEST.CUSTOMER.PHONE}12`);
+    
+    cy.get('tr:first-of-type td:last-of-type a').should('be.visible');
+  });
+  
+  it('Check recent call', function()
   {
     cy.visit(`${ROUTE.PHONE_CALL_INSERT}/${TEST.CUSTOMER.PHONE}`);
     
@@ -27,7 +40,7 @@ describe('Phone Call Test', function()
     cy.get('#customerFormInsert input[name="name"]').invoke('val').should('not.contain', TEST.CUSTOMER.NAME);
   });
   
-  it('Existing customer called', function()
+  it('An existing customer called', function()
   {
     cy.visit(`${ROUTE.PHONE_CALL_INSERT}/${TEST.CUSTOMER.PHONE}`);
     
