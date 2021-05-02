@@ -1,4 +1,5 @@
-import {doLogin, insertOrder} from '../utilities/commons.js';
+import {insertOrder} from '../utilities/order.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Pending Orders Tests', function()
 {

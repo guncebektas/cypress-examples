@@ -1,4 +1,4 @@
-import {doLogin} from '../utilities/commons.js';
+import {doLogin} from '../utilities/doLogin.js';
 import {ROUTE} from '../../../client/shared/enums/client.js';
 
 describe('Dashboard Tests', function()

@@ -1,4 +1,4 @@
-import {doLogin} from '../utilities/commons.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Admin Setup Wizard', function()
 {

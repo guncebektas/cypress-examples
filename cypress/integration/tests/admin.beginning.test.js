@@ -1,4 +1,4 @@
-import {doLogin} from '../utilities/commons.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Admin Beginning - Prepare Test Environment', function() {
   it('Clear database', function()
@@ -9,7 +9,7 @@ describe('Admin Beginning - Prepare Test Environment', function() {
       win.Meteor.call('clear.database');
     })
     
-    cy.wait(5000);
+    cy.wait(1000);
     
     cy.url().should('contain', 'localhost');
   });
@@ -20,7 +20,7 @@ describe('Admin Beginning - Prepare Test Environment', function() {
       win.Meteor.call('insert.dummy.data');
     })
     
-    cy.wait(5000);
+    cy.wait(1000);
     
     cy.url().should('contain', 'localhost');
   });

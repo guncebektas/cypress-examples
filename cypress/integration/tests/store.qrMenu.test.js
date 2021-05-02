@@ -1,14 +1,17 @@
 import {ROUTE} from '../../../client/shared/enums/client.js';
-import {DUMMY_PROFILE_ID} from '../../../server/modules/dummies/fixtures/dummyProfiles.js';
+import {doLogin} from '../utilities/doLogin.js';
 
-describe('QR Menu', function()
+describe('Store\'s QR Menu', function()
 {
-  it('The menu is valid', function()
+  beforeEach(() =>
   {
-    cy.visit(`${ROUTE.STORE_MENU}/${DUMMY_PROFILE_ID}`);
+    doLogin();
+  });
+  
+  it('QR code is visible', function()
+  {
+    cy.visit(ROUTE.STORE_QR_MENU);
     
-    cy.get('.list-group .list-group-item').first().should('contain', 'Dürümler');
-    
-    cy.get('.card-body p.m-0').first().should('contain', 'Adana Dürüm Eko');
+    cy.get('#qr-code canvas').should('be.visible');
   });
 });

@@ -15,10 +15,6 @@ c
 3cypress/integration/tests/expenseCategories.test.js,3/f/3fe248993943e2440096503171e6d790e025b35d
 Z
 *cypress/integration/tests/expenses.test.js,7/2/726b92bb0f32b08e69dc203cb44bae8b1f30a24b
-^
-.cypress/integration/tests/order.search.test.js,c/2/c20072288d5efb30131e4bf7f9488af2d06d1583
-b
-2cypress/integration/tests/orders.completed.test.js,f/c/fc512e6011b388646d0d8d167826e584483df2e6
 j
 :cypress/integration/tests/orders.storeToOrderModal.test.js,b/d/bd15caf5f4f937df95126da192f1d06b0516f6fe
 \
@@ -27,20 +23,10 @@ c
 3cypress/integration/tests/productCategories.test.js,0/2/026c02b32805054a96abb0730f683699e90b0ba5
 Z
 *cypress/integration/tests/products.test.js,9/d/9dca999c9a4f2fe6879d34cd4b84ee9cd594eb2e
-Y
-)cypress/integration/tests/profile.test.js,9/8/98e463e2364628b7caace0ce468a4fc7cb2d9b96
-_
-/cypress/integration/tests/resetPassword.test.js,4/0/40fd68d0c41a10c4f8893fbeb2a70e8ce720da4f
-X
-(cypress/integration/tests/signUp.test.js,c/c/cc9c996e06aeecef57f92a06f02f3beaea8b3032
 `
 0cypress/integration/tests/store.profiles.test.js,1/b/1b279345c659f636f9c5b4077d213609b55b2c6b
 ^
 .cypress/integration/tests/store.qrMenu.test.js,0/8/086c5401ba66d06018bee2e21d4eebdd46d95f0b
-W
-'cypress/integration/tests/store.test.js,4/1/41d675f9fdc94662b33a0cbbe5eaac84b65c7419
-X
-(cypress/integration/tests/stripe.test.js,3/6/36fa537cf2153dfc9490c60b9d03053fbcc34e97
 X
 (cypress/integration/utilities/commons.js,e/f/ef292daa8f311f6d86e29e7402a58740bd07cc29
 H
@@ -77,3 +63,5 @@ m
 =cypress/integration/tests/store.preferences.happyHour.test.js,f/0/f08cb0d9c22139d511487a28666b777fc3c823de
 q
 Acypress/integration/tests/store.preferences.serviceCharge.test.js,5/6/5642217cde596163516b768b7e0dcc1bd601d7c4
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

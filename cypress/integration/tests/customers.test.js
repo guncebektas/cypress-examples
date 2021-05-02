@@ -1,4 +1,5 @@
-import {doLogin, cyDataTable} from '../utilities/commons.js';
+import {doLogin} from '../utilities/doLogin.js';
+import {cyDataTable} from '../utilities/commons.js';
 import {TEST} from '../constants/constantsForTests.js';
 import {ROUTE} from '../../../client/shared/enums/client.js';
 

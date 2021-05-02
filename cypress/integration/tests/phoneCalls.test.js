@@ -1,6 +1,6 @@
-import {doLogin} from '../utilities/commons.js';
 import {TEST} from '../constants/constantsForTests.js';
 import {ROUTE} from '../../../client/shared/enums/client.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Phone Call Test', function()
 {

@@ -1,7 +1,13 @@
 # E2E Tests
+
 This folder contains e2e tests
 
+### Test Strategy
+Some test may require dummy data, the responsibility of dummy data should not be on cypress.
+The test data of cypress should allow for an edit or delete.
+
 ### Test Plan
+
 1. Admin
     - [x] Beginning
     - [ ] Profile List
@@ -10,7 +16,7 @@ This folder contains e2e tests
     - [ ] New Franchise
     - [x] Setup Wizard
         - [x] Next Button & Tab Selection
-        - [x] Ship Button
+        - [x] Skip Button
         - [ ] Insert Tabs
         - [ ] Insert Tables
         - [ ] Insert Product Categories
@@ -46,33 +52,42 @@ This folder contains e2e tests
 1. Orders
     - [ ] Store To Order Modal
         - [x] Count dashes
-        - [ ] Read one of the product description
+        - [ ] Read product description
         - [x] Increase & decrease the amount of product in the order
         - [x] Remove one product from the order
-        - [ ] Select a table
+        - [x] Select a table for the order
+        - [x] Select a table which has another order
         - [x] Tag the order when inserting
-        - [ ] Select a courier
-        - [ ] Type an order note
+        - [x] Select a courier
+        - [x] Type an order note
         - [x] Make a numeric discount while inserting
         - [x] Make a percentage discount while inserting
         - [ ] Select a payment method
         - [ ] Select a partial payment
-        - [ ] Delete the order
-        - [ ] Open a new order
+        - [x] Delete the order
+        - [x] Open a new order
+    - [x] Store To Order Modal (Related with store preferences)
         - [x] Happy Hour (Can be found in store.preferences.happyHour.js)
-        - [x] Service Charge (Can be found in store.preferences.serviceCharge.js)
+        - [x] Service Charge - Percentage (Can be found in store.preferences.serviceCharge.js)
+        - [x] Service Charge - Numeric
     - [ ] Order Details (Pending)
-        - [x] Set an existing customer
-        - [x] Set a new customer
+        - [ ] Action modal
+            - [x] Check for store owner
+            - [ ] Check for store worker
+        - [x] Customer
+            - [x] Set an existing customer
+            - [x] Set a new customer
         - [ ] Separate the order
         - [ ] Merge two orders
-        - [ ] Type the tip
+        - [x] Type the tip
+        - [x] Change the date of order
         - [ ] Check logs of the order
-        - [ ] Change the date of order
         - [ ] Cancel the order
         - [ ] Remove the order - Softly
     - [ ] Order Details (Completed)
-        - [ ] Check actions modal
+        - [ ] Action modal
+            - [ ] Check for store owner
+            - [ ] Check for store worker
         - [ ] Restore the order
         - [ ] Remove the order - Permanently
     - [ ] Pending Orders List Item
@@ -88,7 +103,7 @@ This folder contains e2e tests
     - [ ] Completed Orders
     - [ ] Completed Orders without Payment
     - [ ] Removed Orders
-    - [ ] Search an Order
+    - [x] Search an Order
         - [x] Search an order
         - [x] Search a wrong order id
 
@@ -99,7 +114,6 @@ This folder contains e2e tests
     - [x] Cancel button
 
 1. Customers
-    - [ ] Customer List
     - [x] New Customer
     - [x] New Temp Customer
     - [x] Delete Temp Customer
@@ -115,6 +129,14 @@ This folder contains e2e tests
 1. Couriers
     - [ ] Courier List
     - [ ] New Courier
+
+1. Reservation
+    - [x] Reservation List By Date
+    - [x] Reservation Delete
+    - [x] New Reservation
+    - [x] Edit Reservation
+    - [x] Check disabled tables
+    - [ ] Find customer by phone
 
 1. Expenses
     - [x] New Expense Category
@@ -164,29 +186,48 @@ This folder contains e2e tests
 
 1. Profile Settings
     - [x] Edit profile details
-    - [ ] Preferences
+        - [x] Update profile details
+    - [x] Preferences
+        - [x] Change language
+        - [x] Main screen change
+        - [x] Add products to the new order by typing
+        - [x] Add products to the new order by clicking
+        - [x] Use cart when adding a product
     - [ ] Printer Usage
-    - [ ] Change Password
+    - [x] Change Password
 
 1. Store Settings
     - [x] Edit Store Details
+        - [x] Update store details
+        - [x] Check slug
     - [x] Preferences
         - [x] Happy Hour
         - [x] Service Charge
-    - [ ] Time and Location
-    - [ ] Payment Methods
-    - [ ] Security
-    - [ ] QR Menu
+    - [x] QR Menu
+    - [x] Roles Test
+    - [x] Payment Methods
+        - [x] Add new payment methods
+        - [x] Check all payment methods in modal
+        - [x] Check all payment methods in pending order
+    - [x] Security
+        - [x] Lock Screen (Tests can be found in lockScreen.test.js)
+
 
 1. QR Menu
     - [ ] Is product categories valid
     - [x] Is products valid
 
 1. Table Settings
-    - [ ] Regions
-    - [ ] New Region
-    - [ ] Tables
-    - [ ] New Table
+    - [x] New Region
+    - [ ] Edit Region
+    - [ ] Delete Region
+    - [x] New Table
+    - [ ] Edit Table
+    - [ ] Delete Table
+    - [x] Add new order from tables page
+    - [x] Edit an order on the table
+    - [x] Mark order products as processed
+    - [x] Mark order products as completed
 
 1. Printer Settings
 
@@ -207,7 +248,15 @@ This folder contains e2e tests
 1. Upgrade
     - [x] Buy monthly package
     - [ ] Buy yearly package
-    - [ ] Wrong credit card
+    - [x] Wrong credit card
+
+1. Refer
+    - [x] Clear database for refer test
+    - [x] Insert dummy data for refer test
+    - [x] Referred store bought monthly package
+    - [x] Check the license length of the referrer store
+    - [x] Check referred numbers of referrer after upgrade
+    -  [x] Navigate to refer page
 
 1. Store Worker
     - [ ] Set discount
@@ -221,4 +270,10 @@ This folder contains e2e tests
     - [ ] Product reports
 
 ### How to start tests
+
 Type ```npm run cypress``` into terminal
+
+### Location of tests
+
+If cypress cache exists after file change, delete
+~/Library/Application Support/Cypress/cy

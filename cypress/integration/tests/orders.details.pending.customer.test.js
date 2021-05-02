@@ -1,5 +1,6 @@
-import {doLogin, insertOrder} from '../utilities/commons.js';
+import {insertOrder} from '../utilities/order.js';
 import {TEST} from '../constants/constantsForTests.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Pending Order Customer Tests', function()
 {
@@ -17,11 +18,17 @@ describe('Pending Order Customer Tests', function()
   {
     cy.get('button[data-target="#modal-customer"]').click();
     
-    cy.get('input[name="customer-search-string"]').type(TEST.CUSTOMER.PHONE, {delay: 0});
+    cy.get('input[name="customer-search-string"]').first().clear().type(TEST.CUSTOMER.PHONE);
+  
+    cy.wait(1000);
     
     cy.get('#btn-customer-search').click();
+  
+    cy.wait(1000);
     
     cy.get('#customer-search-result .btn-customer-select').first().click();
+  
+    cy.wait(3000);
     
     cy.get('p').should('contain', TEST.CUSTOMER.NAME);
   });
@@ -29,8 +36,8 @@ describe('Pending Order Customer Tests', function()
   it('Set a new customer', function()
   {
     let customer = {
-      name: 'xxx',
-      phone: 'xxx'
+      name: 'yyy',
+      phone: 'yyy'
     }
     
     cy.get('button[data-target="#modal-customer"]').click();

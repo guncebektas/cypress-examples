@@ -1,6 +1,6 @@
-import {doLogin} from '../utilities/commons.js';
 import {USER} from '../../../imports/shared/enums/general.js';
 import {ROUTE} from '../../../client/shared/enums/client.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Admin Upgrade', function()
 {

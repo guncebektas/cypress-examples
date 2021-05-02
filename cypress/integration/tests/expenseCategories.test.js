@@ -1,5 +1,6 @@
-import {cyDataTable, doLogin} from '../utilities/commons.js';
+import {cyDataTable} from '../utilities/commons.js';
 import {TEST} from '../constants/constantsForTests.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Expense Category Test', function()
 {

@@ -1,12 +1,13 @@
-import {cyDataTable, doLogin} from '../utilities/commons.js';
+import {cyDataTable} from '../utilities/commons.js';
 import {ROUTE} from '../../../client/shared/enums/client.js';
 import {USER} from '../../../imports/shared/enums/general.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 /**
  *
  * @param user {object}
  */
-let creatUserForStore = function(user)
+export function creatUserForStore(user)
 {
   doLogin();
   

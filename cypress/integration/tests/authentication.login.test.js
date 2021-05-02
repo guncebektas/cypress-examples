@@ -1,11 +1,9 @@
-import {doLogin} from '../utilities/commons.js';
+import {doLogin} from '../utilities/doLogin.js';
 import {USER} from '../../../imports/shared/enums/general.js';
 import {ROUTE} from '../../../client/shared/enums/client.js';
 
 describe('Login Test', function()
 {
-  // ----------------------------------------------------------------------
-  
   it('Login Wrong Password', function()
   {
     cy.visit(ROUTE.LOGOUT);
@@ -19,8 +17,6 @@ describe('Login Test', function()
     
     cy.get('.swal2-confirm').click();
   });
-  
-  // ----------------------------------------------------------------------
   
   it('Login Not Existing User', function()
   {
@@ -36,11 +32,8 @@ describe('Login Test', function()
     cy.get('.swal2-confirm').click();
   });
   
-  // ----------------------------------------------------------------------
-  
   it('Login Successfully', function()
   {
     doLogin();
   });
-  
 });

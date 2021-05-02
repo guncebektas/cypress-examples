@@ -1,5 +1,5 @@
-import {doLogin} from '../utilities/commons.js';
 import {USER} from '../../../imports/shared/enums/general.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Profile Change Password', function()
 {

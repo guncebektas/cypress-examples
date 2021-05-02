@@ -1,4 +1,5 @@
-import {deleteOrder, doLogin, insertOrder} from '../utilities/commons.js';
+import {deleteOrder, insertOrder} from '../utilities/order.js';
+import {doLogin} from '../utilities/doLogin.js';
 import {ROUTE} from '../../../client/shared/enums/client.js';
 
 describe('Happy Hour Test', function()

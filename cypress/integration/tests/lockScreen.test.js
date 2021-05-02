@@ -1,5 +1,5 @@
 import {ROUTE} from '../../../client/shared/enums/client.js';
-import {doLogin} from '../utilities/commons.js';
+import {doLogin} from '../utilities/doLogin.js';
 
 describe('Lock Screen Test', function()
 {
